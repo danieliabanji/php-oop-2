@@ -48,7 +48,7 @@ include __DIR__ . '/partials/header.php';
                                 <?php } ?>
                                 <?php if (get_class($product) === "Food") { ?>
                                 <p class="card-text">kg:
-                                    <?php echo $product->weight_kg ?>
+                                    <?php echo $product->getWeight() ?>
                                 </p>
                                 <p class="card-text"> Al gusto di:
                                     <?php echo $product->taste ?>
