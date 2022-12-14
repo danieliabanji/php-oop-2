@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../Models/Products.php';
 require_once __DIR__ . '/../Models/Category.php';
+require_once __DIR__ . '/../Traits/Weightable.php';
 
 
 $gioco1 = new Toys("Gioco per cani Corda Osso", 01, "Gioco per cani", "./img/dog-toy.webp", new Category("cani"), 4.13, "misto cotone");
@@ -12,10 +13,10 @@ $cibo3 = new Food("Natural Trainer Gatto Sterilised Salmone", 04, "Cibo per gatt
 $cibo4 = new Food("Monge All Breeds Adult Agnello Riso e Patate", 04, "Cibo per cani", "./img/dog-food-2.webp", new Category("cani"), 16.99, "Agnello, Riso e Patate");
 $gioco4 = new Toys("KONG SqueakAir Balls", 01, "Gioco per cani", "./img/dog-toy-2.webp", new Category("cani"), 4.13, "Composto in materiale non abrasivo");
 
-$cibo1->setWeight('12', 'kg');
-$cibo2->setWeight('7', 'kg');
-$cibo3->setWeight('3', 'kg');
-$cibo4->setWeight('2.5', 'kg');
+$cibo1->setWeight(12, 'kg');
+$cibo2->setWeight(7, 'kg');
+$cibo3->setWeight(3, 'kg');
+$cibo4->setWeight(2.5, 'kg');
 
 
 

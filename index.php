@@ -4,6 +4,9 @@ require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Products.php';
 require_once __DIR__ . '/Models/Toys.php';
 require_once __DIR__ . '/database/db.php';
+require_once __DIR__ . '/Traits/Weightable.php';
+
+
 
 
 include __DIR__ . '/partials/header.php';
@@ -47,8 +50,14 @@ include __DIR__ . '/partials/header.php';
                                 </p>
                                 <?php } ?>
                                 <?php if (get_class($product) === "Food") { ?>
-                                <p class="card-text">kg:
-                                    <?php echo $product->getWeight() ?>
+                                <p class="card-text">
+                                    <?php
+                    try {
+                        echo $product->getWeight();
+                    } catch (Exception $e) {
+                        echo 'Eccezzione' . $e->getMessage();
+                    }
+                                    ?>
                                 </p>
                                 <p class="card-text"> Al gusto di:
                                     <?php echo $product->taste ?>
